@@ -3,13 +3,13 @@
 {% block page_content %}
 <h1>Projects</h1>
 <div class="row">
-{% for project in projects %}
+{% for o_Project in o_Projects %}
     <div class="col-md-4">
         <div class="card mb-2">
-            <img class="card-img-top" src="{% static project.s_ImageFile %}">
+            <img class="card-img-top" src="{% static o_Project.s_ImageFile %}">
             <div class="card-body">
-                <h5 class="card-title">{{ project.s_Title }}</h5>
-                <a href="{% url 'ProjectDetail' project.pk %}"
+                <h5 class="card-title">{{ o_Project.s_Title }}</h5>
+                <a href="{% url 'ProjectsDetail' o_Project.pk %}"
                    class="btn btn-primary">
                     Read More
                 </a>

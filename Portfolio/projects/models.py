@@ -12,7 +12,8 @@ class Project(models.Model):
                 (CPP, "C++"),
                 (PY, "Python"),
                 (DJ, "Django"),
-                (SL, "SimuLink"),
+                (SL, "Simulink"),
+                ("None", "None"),
 
     ]
     # Fields -------------------------------------------------------------------

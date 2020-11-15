@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1>{{ o_Project.s_Title }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        <img src="{% static o_Project.s_ImageFile %}" alt="" width="100%">
+    </div>
+    <div class="col-md-4">
+        <h5>About the project:</h5>
+        <p>{{ o_Project.s_Description }}</p>
+        <br>
+        <h5>Technology used:</h5>
+        <p>{{ o_Project.s_PrimaryTechnology }}</p>
+        <h5>Further Resources</h5>
+        {% if o_Project.s_LinkGitHub != "None" %}
+        <p>Documented source code is available on <a href={{o_Project.s_LinkGitHub}} target="_blank"">Github</a></p>
+        {% endif %}
+        <h5>
+    </div>
+</div>
+{% endblock %}

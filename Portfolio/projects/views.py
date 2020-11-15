@@ -2,16 +2,16 @@ from django.shortcuts import render
 from .models import Project
 # Create your views here.
 
-def Index(request):
-    projects = Project.objects.all()
-    context = {
-        'projects': projects
+def ProjectsIndex(request):
+    o_Projects = Project.objects.all()
+    ctx = {
+        'o_Projects': o_Projects
     }
-    return render(request, 'Index.html', context)
+    return render(request, 'ProjectsIndex.html', ctx)
 
-def ProjectDetail(request, pk):
-    project = Project.objects.get(pk=pk)
-    context = {
-        'project': project
+def ProjectsDetail(request, pk):
+    o_Project = Project.objects.get(pk=pk)
+    ctx = {
+        'o_Project': o_Project
     }
-    return render(request, 'ProjectDetail.html', context)
+    return render(request, 'ProjectsDetail.html', ctx)
