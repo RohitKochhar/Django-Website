@@ -10,6 +10,12 @@ File History:         2020-11-15 - Created
 <meta charset='utf-8'>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<style>
+  body {
+    background-color: #00ddff;
+    background-image: url('background.jpg');
+}
+</style>
 <!-- Create the NavBar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
@@ -26,13 +32,16 @@ File History:         2020-11-15 - Created
             <li class="nav-item">
               <a class="nav-link" href="{% url 'ProjectsIndex' %}">Projects</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'Profile' %}">Profile</a>
+            </li>
           </ul>
         </div>
     </div>
 
 </nav>
 
-<div class="container">
+<div class="container"">
     {% block page_content %}{% endblock %}
 </div>
 

@@ -1,0 +1,65 @@
+<!---
+File Name: Profile.html
+
+File Description: This HTML page is rendered by http://127.0.0.1:8000/about/profile
+
+File History:         2020-11-15 - Created
+--->
+<!-- Load our layout, base.html --->
+{% extends "base.html" %}
+
+<!-- Create the block that will be added to base.html -->
+{% block page_content %}
+<style>
+  .profile {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+  }
+  .profile-card {
+    background-color: #dbfaff;
+    border: 4px solid white;
+    margin-top: 10px;
+    border-radius: 10px;
+
+  }
+  .whole-pane {
+    margin: 10px;
+    padding: 0px;
+    display: flex;
+
+  }
+  .left-pane {
+    max-width: 25%;
+    display: inline-block;
+    margin: 10px;
+  }
+  .right-pane {
+    max-width: 60%;
+    margin: 10px;
+    display: inline-block;
+  }
+  .profile-title {
+    margin-top: 30px
+    width: 100%;
+    text-align: center;
+  }
+
+</style>
+
+<div class="profile-card">
+<h1 class="profile-title">Thanks for Stopping By!</h1>
+<div class="whole-pane">
+  <div class='left-pane'>
+    <img class="profile" src="https://scontent-lga3-2.xx.fbcdn.net/v/t1.0-9/105568720_10220244334491776_4892990257405471619_o.jpg?_nc_cat=108&ccb=2&_nc_sid=09cbfe&_nc_ohc=Q5Ej831kFboAX8JN4Zt&_nc_ht=scontent-lga3-2.xx&oh=f84db59bd06365ab355d803839f0aff0&oe=5FD890B3" alt="">
+  </div>
+  <div class="right-pane">
+
+    <p>My name is Rohit Singh, I'm a third year electrical engineering student at the University of Waterloo. Currently, I am working as a CMOS Reliability Intern at the University of British Columbia, and I will be working here until May 2021, when I am then seeking a four month co-op opportunity</p>
+    <p>This portfolio was created to showcase various projects I've built, but it has since evolved to include a blog section, where I can create tutorial blogs lowering the barrier of entry to topics which I enjoy so others can also enjoy them! In my spare time, you can find me rewatching my favourite shows, playing guitar or watching golf.</p>
+    <p>If you feel like getting in touch, you can reach me at <a href="#" target="_blank">rkochhar@uwaterloo.ca</a>. If you're interested in looking at some of my projects more in depth, you can <a href="https://github.com/RohitKochhar">check me out on GitHub</a></p>
+  </div>
+</div>
+</div>
+
+{% endblock %}

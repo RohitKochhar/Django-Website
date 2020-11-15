@@ -10,8 +10,23 @@ File History:         2020-11-15 - Created
 
 <!-- Create the block that will be added to base.html -->
 {% block page_content %}
-<div class="col-md-8 offset-md-2">
-    <h1>Blog Index</h1>
+
+<style>
+  .blog-index {
+    border: 4px solid white;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #dbfaff;
+  }
+
+  .blog-title {
+    margin: 10px;
+    text-align: center;
+  }
+</style>
+
+<div class="col-md-8 offset-md-2 blog-index">
+    <h1 class="blog-title">Blog Posts</h1>
     <hr>
 
     <!-- Display the most recent posts, with some relevant data and a sneak peek -->
@@ -28,6 +43,6 @@ File History:         2020-11-15 - Created
     </small>
     <p>{{ o_Post.s_Body | slice:":400" }}...</p>
     {% endfor %}
-    
+
 </div>
 {% endblock %}
