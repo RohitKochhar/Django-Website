@@ -11,8 +11,21 @@
         <h5>About the project:</h5>
         <p>{{ o_Project.s_Description }}</p>
         <br>
+        {% if o_Project.s_SecondaryTechnology == "None" %}
         <h5>Technology used:</h5>
-        <p>{{ o_Project.s_PrimaryTechnology }}</p>
+        <ul>
+          <li>{{ o_Project.s_PrimaryTechnology}}</li>
+        </ul>
+        {% else %}
+        <h5>Technologies used:</h5>
+        <ol>
+          <li>{{ o_Project.s_PrimaryTechnology}}</li>
+          <li>{{ o_Project.s_SecondaryTechnology}}</li>
+          {% if o_Project.s_TertiaryTechnology != "None" %}
+          <li>{{ o_Project.s_TertiaryTechnology}}</li>
+          {% endif %}
+        </ol>
+        {% endif %}
         <h5>Further Resources</h5>
         {% if o_Project.s_LinkGitHub != "None" %}
         <p>Documented source code is available on <a href={{o_Project.s_LinkGitHub}} target="_blank"">Github</a></p>

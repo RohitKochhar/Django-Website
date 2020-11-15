@@ -3,10 +3,10 @@ from django.db import models
 class Project(models.Model):
     # Constants ----------------------------------------------------------------
     MATLAB  = 'MATLAB'
-    CPP     = 'cpp'
-    PY      = 'py'
-    DJ      = 'dj'
-    SL      = 'sl'
+    CPP     = 'C++'
+    PY      = 'Python'
+    DJ      = 'Django'
+    SL      = 'Simulink'
     TechnologyChoices = [
                 (MATLAB, "MATLAB"),
                 (CPP, "C++"),
