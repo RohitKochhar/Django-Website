@@ -1,7 +1,16 @@
-{% extends "base.html" %}
-{% load static %}
+<!---
+File Name: ProjectsDetail.html
 
+File Description: This HTML page is rendered by http://127.0.0.1:8000/projects/{1}/
+
+File History:         2020-11-15 - Created
+--->
+<!-- Load our layout, base.html --->
+{% extends "base.html" %}
+
+<!-- Create the block that will be added to base.html -->
 {% block page_content %}
+{% load static %}
 <h1>{{ o_Project.s_Title }}</h1>
 <div class="row">
     <div class="col-md-8">
@@ -11,6 +20,7 @@
         <h5>About the project:</h5>
         <p>{{ o_Project.s_Description }}</p>
         <br>
+
         {% if o_Project.s_SecondaryTechnology == "None" %}
         <h5>Technology used:</h5>
         <ul>
@@ -26,6 +36,7 @@
           {% endif %}
         </ol>
         {% endif %}
+
         <h5>Further Resources</h5>
         {% if o_Project.s_LinkGitHub != "None" %}
         <p>Documented source code is available on <a href={{o_Project.s_LinkGitHub}} target="_blank"">Github</a></p>

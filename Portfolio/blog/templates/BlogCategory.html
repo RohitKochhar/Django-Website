@@ -1,8 +1,21 @@
+<!---
+File Name: BlogCategory.html
+
+File Description: This HTML page is rendered by http://127.0.0.1:8000/blog/{o_Category}/
+
+File History:         2020-11-15 - Created
+--->
+<!-- Load our layout, base.html --->
 {% extends "base.html" %}
+
+<!-- Create the block that will be added to base.html -->
 {% block page_content %}
+{% load static %}
 <div class="col-md-8 offset-md-2">
     <h1>{{ o_Category | title }}</h1>
     <hr>
+
+    <!-- Create a "block" for each blog post with basic information -->
     {% for o_Post in o_Posts %}
         <h2><a href="{% url 'BlogDetail' o_Post.pk %}">{{ o_Post.s_Title }}</a></h2>
         <small>
@@ -16,5 +29,6 @@
         </small>
         <p>{{ o_Post.s_Body | slice:":400" }}...</p>
     {% endfor %}
+
 </div>
 {% endblock %}

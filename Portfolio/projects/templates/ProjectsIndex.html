@@ -1,6 +1,16 @@
+<!---
+File Name: ProjectsIndex.html
+
+File Description: This HTML page is rendered by http://127.0.0.1:8000/projects
+
+File History:         2020-11-15 - Created
+--->
+<!-- Load our layout, base.html --->
 {% extends "base.html" %}
-{% load static %}
+
+<!-- Create the block that will be added to base.html -->
 {% block page_content %}
+{% load static %}
 <h1>Projects</h1>
 <div class="row">
 {% for o_Project in o_Projects %}
