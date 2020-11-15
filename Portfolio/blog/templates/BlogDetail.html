@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="col-md-8 offset-md-2">
+    <h1>{{ o_Post.s_Title }}</h1>
+    <small>
+        {{ o_Post.d_Creation.date }} |&nbsp;
+        Categories:&nbsp;
+        {% for o_Category in o_Post.o_Categories.all %}
+        <a href="{% url 'BlogCategory' o_Category.s_Name %}">
+            {{ o_Category.s_Name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <p>{{ o_Post.s_Body | linebreaks }}</p>
+    <h3>Leave a comment:</h3>
+    <form action="/blog/{{ o_Post.pk }}/" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ o_Form.s_Author }}
+        </div>
+        <div class="form-group">
+            {{ o_Form.s_Body }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <h3>Comments:</h3>
+    {% for o_Comment in o_Comments %}
+    <p>
+        On {{ o_Comment.d_Creation.date }}&nbsp;
+        <b>{{ o_Comment.s_Author }}</b> wrote:
+    </p>
+    <p>{{ o_Comment.s_Body }}</p>
+    <hr>
+    {% endfor %}
+</div>
+{% endblock %}

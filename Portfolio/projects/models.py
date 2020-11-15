@@ -1,10 +1,8 @@
 from django.db import models
 
-# Create your models here.
-
 class Project(models.Model):
     # Constants ----------------------------------------------------------------
-    MATLAB  = 'matlab'
+    MATLAB  = 'MATLAB'
     CPP     = 'cpp'
     PY      = 'py'
     DJ      = 'dj'
@@ -24,6 +22,7 @@ class Project(models.Model):
     s_SecondaryTechnology   = models.CharField(max_length=20, choices = TechnologyChoices, default = "None")
     s_TertiaryTechnology    = models.CharField(max_length=20, choices = TechnologyChoices, default = "None")
     s_ImageFile             = models.CharField(max_length=20, default = 'stock1.png')
+    s_LinkGitHub            = models.CharField(max_length=100, default = "None")
 
 
     def __str__(self):

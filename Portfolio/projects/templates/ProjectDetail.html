@@ -13,6 +13,11 @@
         <br>
         <h5>Technology used:</h5>
         <p>{{ project.s_PrimaryTechnology }}</p>
+        <h5>Further Resources</h5>
+        {% if project.s_LinkGitHub != "None" %}
+        <p>Documented source code is available on <a href={{project.s_LinkGitHub}} target="_blank"">Github</a></p>
+        {% endif %}
+        <h5>
     </div>
 </div>
 {% endblock %}
