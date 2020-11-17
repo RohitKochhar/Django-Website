@@ -9,13 +9,18 @@ File History:         2020-11-15 - Created
 <!-- Set the meta tag to enable responsive rendering -->
 <meta charset='utf-8'>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+{% load static %}
 <style>
   body {
-    background-image: url('https://github.com/RohitKochhar/Django-Website/blob/main/Portfolio/background.jpg?raw=true');
+    background-image: url("{% static 'background.jpg' %}");
     background-size: cover;
 }
 </style>
+
+
+<link type="text/css" rel="stylesheet" href="{% static 'main.css' %}"/>
+
+
 <!-- Create the NavBar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
@@ -38,7 +43,6 @@ File History:         2020-11-15 - Created
           </ul>
         </div>
     </div>
-
 </nav>
 
 <div class="container"">

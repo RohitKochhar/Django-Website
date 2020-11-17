@@ -1,0 +1,11 @@
+
+  .main-div {
+    border: 4px solid white;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #f5feff
+}
+  .main-title {
+    margin: 10px;
+    text-align: center;
+}
