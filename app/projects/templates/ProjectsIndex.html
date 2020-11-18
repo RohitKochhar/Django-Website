@@ -15,14 +15,27 @@ File History:         2020-11-15 - Created
 <div class="main-div">
   <h1 class="main-title">Projects</h1>
   <hr>
+  <div class='project-search-bar'>
+    <form action="{% url 'Projects:FilterByTechnology' %}" method="post">
+      {% csrf_token %}
+      <label for="s_TechnologySelection">Search for projects using a specific technology:</label>
+      <select name="s_TechnologySelection">
+        {% for s_Tech in a_TechChoices %}
+          <option value="{{s_Tech.s_Name}}">{{s_Tech}}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Filter</button>
+    </form>
+    
+  </div>
   <div class="row">
   {% for o_Project in o_Projects %}
-    <div class="col-md-4">
+    <div class="col-md-4 project-card">
         <div class="card mb-2">
             <img class="card-img-top" src="{% static o_Project.s_ImageFile %}">
             <div class="card-body">
                 <h5 class="card-title">{{ o_Project.s_Title }}</h5>
-                <a href="{% url 'ProjectsDetail' o_Project.pk %}"
+                <a href="{% url 'Projects:Detail' o_Project.pk %}"
                    class="btn btn-primary">
                     Read More
                 </a>

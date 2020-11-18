@@ -10,16 +10,10 @@ File History:         2020-11-15 - Created
 
 <!-- Create the block that will be added to base.html -->
 {% block page_content %}
-<style>
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90%;
-    background-color: #f5feff;
-  }
-</style>
-<div class="center">
-  <h1>Welcome!</h1>
+<div class="jumbotron jumbotron-fluid landing-jumbotron main-div">
+  <div class="container">
+    <h1 class="display-4">Welcome!</h1>
+    <p class="lead">This portfolio is designed to be a space where I can document previous projects, create blog posts and hopefully do more as time goes on!</p>
+  </div>
 </div>
 {% endblock %}
